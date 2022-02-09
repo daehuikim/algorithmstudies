@@ -1,27 +1,18 @@
-# def isprime(n):
-#     if n==1:
-#         return False
-#     elif n==2:
-#         return True
-#     elif n>2:
-#         for i in range(2,n):
-#             if n%i==0:
-#                 return False
-#     return True
+def isprime(m,n):
+    for i in range(m,n+1):
+        if i == 1:
+            return False
 
-def isprime(n):
-    if n==1:
-        return False
-    elif n==2:
-        return True
-    elif n>2:
-        for i in range(2,n):
-            if n%i==0:
+        for j in range(2,int(i**0.5)+1):
+            if i%j==0:
                 return False
-    return True
+        
+        else:
+            return True
+
 
 m,n = map(int,input().split())
 
 for i in range(m,n+1):
-    if isprime(i):
+    if isprime(i,n):
         print(i)
